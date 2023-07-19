@@ -1,0 +1,248 @@
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #F7F6FC;
+}
+
+.clear {
+    margin: 0;
+    padding: 0;
+    clear: both;
+    border: 0;
+}
+
+#maincontainer {
+    width: 56%;
+    min-width: 705px;
+    min-height: 400px;
+    height: auto !important;
+    height: 600px;
+    margin: 0 auto;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+    #maincontainer div.logo {
+        margin: 0 auto;
+        padding-top: 6%;
+        padding-bottom: 5%;
+        width: 301px;
+    }
+
+        #maincontainer div.logo img {
+            margin: 0;
+            padding: 0;
+        }
+
+    #maincontainer div.innercontainer {
+        margin: 6% auto !important;
+        width: 61%;
+        min-width: 806px;
+    }
+
+        #maincontainer div.innercontainer h3 {
+            height: 35px;
+            width: 80%;
+            margin: 0 auto;
+            padding: 12px 0 0 3px;
+            color: #555555;
+            letter-spacing: 2px;
+        }
+
+        #maincontainer div.innercontainer div.menuContainer {
+        }
+
+            #maincontainer div.innercontainer div.menuContainer img {
+                width: 100px;
+                height: 100px;
+            }
+
+            #maincontainer div.innercontainer div.menuContainer a.administrati,
+            #maincontainer div.innercontainer div.menuContainer a.administrati:link,
+            #maincontainer div.innercontainer div.menuContainer a.administrati:visited {
+                width: 105px;
+                margin-left: 5px;
+                height: 105px;
+                float: left;
+                background: url(../images/Admin.png) left top no-repeat;
+                display: block;
+            }
+
+                #maincontainer div.innercontainer div.menuContainer a.administrati:hover {
+                    background-position: 0 -111px;
+                }
+
+            #maincontainer div.innercontainer div.menuContainer a.biweekly,
+            #maincontainer div.innercontainer div.menuContainer a.biweekly:link,
+            #maincontainer div.innercontainer div.menuContainer a.biweekly:visited {
+                width: 105px;
+                height: 105px;
+                margin-left: 5px;
+                float: left;
+                background: url(../images/biweekly.png) left top no-repeat;
+                display: block;
+            }
+
+                #maincontainer div.innercontainer div.menuContainer a.biweekly:hover {
+                    background-position: 0 -111px;
+                }
+
+            #maincontainer div.innercontainer div.menuContainer a.visualtool,
+            #maincontainer div.innercontainer div.menuContainer a.visualtool:link,
+            #maincontainer div.innercontainer div.menuContainer a.visualtool:visited {
+                width: 105px;
+                height: 105px;
+                margin-left: 5px;
+                float: left;
+                background: url(../images/visualtool.png) left top no-repeat;
+                display: block;
+            }
+
+                #maincontainer div.innercontainer div.menuContainer a.visualtool:hover {
+                    background-position: 0 -111px;
+                }
+
+
+            #maincontainer div.innercontainer div.menuContainer a.analytics,
+            #maincontainer div.innercontainer div.menuContainer a.analytics:link,
+            #maincontainer div.innercontainer div.menuContainer a.analytics:visited {
+                width: 105px;
+                height: 105px;
+                margin-left: 5px;
+                float: left;
+                background: url(../images/analytics.png) left top no-repeat;
+                display: block;
+            }
+
+                #maincontainer div.innercontainer div.menuContainer a.analytics:hover {
+                    background-position: 0 -111px;
+                }
+
+
+
+
+            #maincontainer div.innercontainer div.menuContainer a.clientDB,
+            #maincontainer div.innercontainer div.menuContainer a.clientDB:link,
+            #maincontainer div.innercontainer div.menuContainer a.clientDB:visited {
+                width: 105px;
+                height: 105px;
+                margin-left: 5px;
+                float: left;
+                background: url(../images/clientdb.png) left top no-repeat;
+                display: block;
+            }
+
+                #maincontainer div.innercontainer div.menuContainer a.clientDB:hover {
+                    background-position: 0 -111px;
+                }
+
+            #maincontainer div.innercontainer div.menuContainer a.referralDB,
+            #maincontainer div.innercontainer div.menuContainer a.referralDB:link,
+            #maincontainer div.innercontainer div.menuContainer a.referralDB:visited {
+                width: 105px;
+                height: 105px;
+                margin-left: 5px;
+                float: left;
+                background: url(../images/referaldb.png) left top no-repeat;
+                display: block;
+            }
+
+                #maincontainer div.innercontainer div.menuContainer a.referralDB:hover {
+                    background-position: 0 -111px;
+                }
+
+
+             #maincontainer div.innercontainer div.menuContainer a.UIDB,
+            #maincontainer div.innercontainer div.menuContainer a.UIDB:link,
+            #maincontainer div.innercontainer div.menuContainer a.UIDB:visited {
+                width: 105px;
+                height: 105px;
+                margin-left: 5px;
+                float: left;
+                background: url(../images/reports.png) left top no-repeat;
+                display: block;
+            }
+
+                #maincontainer div.innercontainer div.menuContainer a.UIDB:hover {
+                    background-position: 0 -111px;
+                }
+
+
+             #maincontainer div.innercontainer div.menuContainer a.WellBody,
+            #maincontainer div.innercontainer div.menuContainer a.WellBody:link,
+            #maincontainer div.innercontainer div.menuContainer a.WellBody:visited {
+                width: 105px;
+                height: 105px;
+                margin-left: 5px;
+                float: left;
+                background: url(../images/analytics.png) left top no-repeat;
+                display: block;
+            }
+
+                #maincontainer div.innercontainer div.menuContainer a.WellBody:hover {
+                    background-position: 0 -111px;
+                }
+
+
+            #maincontainer div.innercontainer div.menuContainer a.Reports,
+            #maincontainer div.innercontainer div.menuContainer a.Reports:link,
+            #maincontainer div.innercontainer div.menuContainer a.Reports:visited {
+                width: 105px;
+                height: 105px;
+                margin-left: 5px;
+                float: left;
+                background: url(../images/reports.png) left top no-repeat;
+                display: block;
+            }
+
+                #maincontainer div.innercontainer div.menuContainer a.Reports:hover {
+                    background-position: 0 -111px;
+                }
+
+/*#divClass {
+    display: none;
+    border-radius: 3px;
+    text-align: center;
+    margin-top: 1%;
+    min-width: 670px;
+    background-color: rgb(204, 204, 204);
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    color: rgb(51, 51, 51);
+    padding: 2%;
+    width: 90%;
+    margin-left: 1%;
+}*/
+
+#divClass {
+    background-color: rgb(204, 204, 204);
+    border-radius: 3px;
+    color: rgb(51, 51, 51);
+    display: none;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    margin-left: 1%;
+    margin-top: 1%;
+    min-width: 615px;
+    padding: 2%;
+    text-align: center;
+    width: 74%;
+}
+
+
+#Validation {
+    color: red;
+    letter-spacing: 1px;
+    font-size: 12px;
+    width: auto;
+    float: right;
+    padding-top: 6px;
+    padding-right: 7%;
+    margin-bottom: 15px;
+}
+
+.LoginContinue {
+
+    float: left; color: rgb(85, 85, 85); letter-spacing: 2px; font-size: 20px; margin-bottom: 15px;font-family:'Arial Unicode MS';
+}
