@@ -28,6 +28,12 @@ public partial class LoginContinue : System.Web.UI.Page
             int LoginId = Convert.ToInt16(arValues[1]);
             SetUserSession(LoginId);
             fillclass();
+            try
+            {
+                fillWelcomeNote();
+        }
+            catch (Exception ex){
+            }
         }
         else
         {
@@ -98,8 +104,13 @@ public partial class LoginContinue : System.Web.UI.Page
                 if (Redirect == "BI" || Redirect == "CD")
                 {
                     sess.Classid = Convert.ToInt32(hidClass.Value);
+                    if (Redirect == "BI")
+                    {
+                        ClsSessionErrorlog sesserrlog = new ClsSessionErrorlog();
+                        sesserrlog.WriteToLog(DateTime.Now.ToString() + ',' + sess.LoginTime.ToString() + ',' + sess.LoginId.ToString() + ',' + sess.UserName + ','+ sess.SchoolId + ',' + sess.SessionID + ',' + "BiWeekly" + ',' + sess.Classid);
 
-                    if (Redirect == "BI") Response.Redirect("BiWeekly/StudentBinder/Home.aspx");
+                        Response.Redirect("BiWeekly/StudentBinder/Home.aspx");
+                    }
                 }
             }
         }
@@ -116,7 +127,13 @@ public partial class LoginContinue : System.Web.UI.Page
         {
             Redirect = hidSelected.Value.ToString();
             sess.Redirect = Redirect;
-            if (Redirect.ToString() == "AD") Response.Redirect("BiWeekly/Administration/AdminHome.aspx");
+            if (Redirect.ToString() == "AD")
+            {
+                ClsSessionErrorlog sesserrlog = new ClsSessionErrorlog();
+                sesserrlog.WriteToLog(DateTime.Now.ToString() + ',' + sess.LoginTime.ToString() + ',' + sess.LoginId.ToString() + ',' + sess.UserName + ','+ sess.SchoolId + ',' + sess.SessionID + ',' + "Administrator" + ',' + sess.Classid);
+                
+                Response.Redirect("BiWeekly/Administration/AdminHome.aspx");
+            }
         }
         else
         {
@@ -131,7 +148,13 @@ public partial class LoginContinue : System.Web.UI.Page
         {
             Redirect = hidSelected.Value.ToString();
             sess.Redirect = Redirect;
-            if (Redirect == "VT") Response.Redirect("BiWeekly/VisualTool/homePage.aspx");
+            if (Redirect == "VT")
+            {
+                ClsSessionErrorlog sesserrlog = new ClsSessionErrorlog();
+                sesserrlog.WriteToLog(DateTime.Now.ToString() + ',' + sess.LoginTime.ToString() + ',' + sess.LoginId.ToString() + ',' + sess.UserName + ','+ sess.SchoolId + ',' + sess.SessionID + ',' + "VisualTool" + ',' + sess.Classid);
+
+                Response.Redirect("BiWeekly/VisualTool/homePage.aspx");
+            }
         }
         else
         {
@@ -145,7 +168,14 @@ public partial class LoginContinue : System.Web.UI.Page
         {
             Redirect = hidSelected.Value.ToString();
             sess.Redirect = Redirect;
-            if (Redirect == "AS") Response.Redirect("MelmarkR/");
+
+            if (Redirect == "AS")
+            {
+                ClsSessionErrorlog sesserrlog = new ClsSessionErrorlog();
+                sesserrlog.WriteToLog(DateTime.Now.ToString() + ',' + sess.LoginTime.ToString() + ',' + sess.LoginId.ToString() + ',' + sess.UserName + ','+ sess.SchoolId + ',' + sess.SessionID + ',' + "AS" + ',' + sess.Classid);
+
+                Response.Redirect("MelmarkR/");
+            }
         }
         else
         {
@@ -230,7 +260,13 @@ public partial class LoginContinue : System.Web.UI.Page
                 {
                     Redirect = hidSelected.Value.ToString();
                     sess.Redirect = Redirect;
-                    if (Redirect == "RD") Response.Redirect("ReferalDB/Dashboard/");
+                    if (Redirect == "RD")
+                    {
+                        ClsSessionErrorlog sesserrlog = new ClsSessionErrorlog();
+                        sesserrlog.WriteToLog(DateTime.Now.ToString() + ',' + sess.LoginTime.ToString() + ',' + sess.LoginId.ToString() + ',' + sess.UserName + ','+ sess.SchoolId + ',' + sess.SessionID + ',' + "Referal" + ',' + sess.Classid);
+
+                        Response.Redirect("ReferalDB/Dashboard/");
+                    }
                 }
                 else
                 {
@@ -288,14 +324,26 @@ public partial class LoginContinue : System.Web.UI.Page
                 {
                     Redirect = hidSelected.Value.ToString();
                     sess.Redirect = Redirect;
-                    if (Redirect == "CD") Response.Redirect("ClientDB");
+                    if (Redirect == "CD")
+                    {
+                        ClsSessionErrorlog sesserrlog = new ClsSessionErrorlog();
+                        sesserrlog.WriteToLog(DateTime.Now.ToString() + ',' + sess.LoginTime.ToString() + ',' + sess.LoginId.ToString() + ',' + sess.UserName + ','+ sess.SchoolId + ',' + sess.SessionID + ',' + "ClientDB" + ',' + sess.Classid);
+
+                        Response.Redirect("ClientDB");
+                    }
                 }
                 Hashtable hsh = sess.perPageName;
                 if (hsh.Contains("General Client") == true)
                 {
                     Redirect = hidSelected.Value.ToString();
                     sess.Redirect = Redirect;
-                    if (Redirect == "CD") Response.Redirect("ClientDB");
+                    if (Redirect == "CD")
+                    {
+                        ClsSessionErrorlog sesserrlog = new ClsSessionErrorlog();
+                        sesserrlog.WriteToLog(DateTime.Now.ToString() + ',' + sess.LoginTime.ToString() + ',' + sess.LoginId.ToString() + ',' + sess.UserName + ','+ sess.SchoolId + ',' + sess.SessionID + ',' + "ClientDB" + ',' + sess.Classid);
+
+                        Response.Redirect("ClientDB");
+                    }
                 }
                 else
                 {
@@ -339,7 +387,13 @@ public partial class LoginContinue : System.Web.UI.Page
         {
             Redirect = hidSelected.Value.ToString();
             sess.Redirect = Redirect;
-            if (Redirect == "UI") Response.Redirect("UIReportProject/testPage.aspx");
+            if (Redirect == "UI")
+            {
+                ClsSessionErrorlog sesserrlog = new ClsSessionErrorlog();
+                sesserrlog.WriteToLog(DateTime.Now.ToString() + ',' + sess.LoginTime.ToString() + ',' + sess.LoginId.ToString() + ',' + sess.UserName + ',' + sess.SchoolId + ',' + sess.SessionID + ',' + "UIReportProject" + ',' + sess.Classid);
+
+                Response.Redirect("UIReportProject/testPage.aspx");
+            }
         }
         else
         {
@@ -389,7 +443,13 @@ public partial class LoginContinue : System.Web.UI.Page
             Redirect = hidSelected.Value.ToString();
             sess.Redirect = Redirect;
             //if (Redirect == "WB") Response.Redirect("WellBodycheck/WBCForm.aspx");
-            if (Redirect == "WB") Response.Redirect("HealthTracker/HTMainPage/HTMainPg.aspx");
+            if (Redirect == "WB")
+            {
+                ClsSessionErrorlog sesserrlog = new ClsSessionErrorlog();
+                sesserrlog.WriteToLog(DateTime.Now.ToString() + ',' + sess.LoginTime.ToString() + ',' + sess.LoginId.ToString() + ',' + sess.UserName + ','+ sess.SchoolId + ',' + sess.SessionID + ',' + "HealthTracker" + ',' + sess.Classid);
+
+                Response.Redirect("HealthTracker/HTMainPage/HTMainPg.aspx");
+            }
         }
         else
         {
@@ -425,6 +485,21 @@ public partial class LoginContinue : System.Web.UI.Page
         }*/
     }
 
+    public void fillWelcomeNote()
+    {
+        clsData objData = new clsData();
+        string strQuery = "SELECT Mesag as Message FROM Mesag";
+        DataTable Dt = objData.ReturnDataTable(strQuery, false);
+        if (Dt == null) return;
+        if (Dt.Rows.Count > 0)
+        {
+            Welmessage.Visible = true;
+            string message = Convert.ToString(Dt.Rows[0]["Message"]);
+            //Response.Write("<script>alert('" + message + "')</script>");
+            Welmessage.Text = message;
+            Welmessage.Style.Add("text-align","center");
+        }
+    }
 
 
 

@@ -243,6 +243,9 @@ public partial class Admin_Login : System.Web.UI.Page
                 {
                     if (sess.LoginId > 0)
                     {
+                        ClsSessionErrorlog sesserrlog = new ClsSessionErrorlog();
+                        sesserrlog.WriteToLog(DateTime.Now.ToString() + ',' + sess.LoginTime.ToString() + ',' + sess.LoginId.ToString() + ',' + sess.UserName + ',' + sess.RoleId + ',' + sess.RoleName + ',' + sess.SchoolId + ',' + sess.SessionID + ',' + "Login" + ',' + sess.Classid);
+
                         Response.Redirect("LoginContinue.aspx");
                     }
                     else
