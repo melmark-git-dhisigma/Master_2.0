@@ -11,6 +11,12 @@ public partial class Logout : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         setTitle();
+
+        sess = (clsSession)Session["UserSession"];
+        ClsSessionErrorlog sesserrlog = new ClsSessionErrorlog();
+        sesserrlog.WriteToLog(DateTime.Now.ToString() + ',' + sess.LoginTime.ToString() + ',' + sess.LoginId.ToString() + ',' + sess.UserName + ','+ sess.SchoolId + ',' + sess.SessionID + ',' + "Logout" + ',' + sess.Classid);
+        sess = null;
+
         Session["UserSession"] = null;
         Session.RemoveAll();
         Session.Abandon();

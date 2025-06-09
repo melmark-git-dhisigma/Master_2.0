@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Configuration;
 
 /// <summary>
 /// Summary description for ClsErrorLog
@@ -20,23 +21,26 @@ public class ClsErrorLog
 
         public void WriteToLog(string msg)
         {
-            try
+            if (ConfigurationManager.AppSettings["EnableMaErrorLog"].ToString() == "true")
             {
-                if (!File.Exists(strLogFilePath))
+                try
                 {
-                    File.Create(strLogFilePath).Close();
+                    if (!File.Exists(strLogFilePath))
+                    {
+                        File.Create(strLogFilePath).Close();
+                    }
+                    using (StreamWriter w = File.AppendText(strLogFilePath))
+                    {
+                        // w.WriteLine("\r<div classLog: ");
+                        w.WriteLine(DateTime.Now.ToString(CultureInfo.InvariantCulture));
+                        string err = msg;
+                        w.WriteLine(err);
+                        w.Flush();
+                        w.Close();
+                    }
                 }
-                using (StreamWriter w = File.AppendText(strLogFilePath))
-                {
-                    // w.WriteLine("\r<div classLog: ");
-                    w.WriteLine(DateTime.Now.ToString(CultureInfo.InvariantCulture));
-                    string err = msg;
-                    w.WriteLine(err);
-                    w.Flush();
-                    w.Close();
-                }
+                catch { }
             }
-            catch { }
 
         }
 
