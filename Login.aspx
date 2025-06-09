@@ -8,7 +8,7 @@
     <%--<link rel="icon" type="image/x-icon" href="images/metaIcon.ico" />--%>
     <link rel="shortcut icon" type="image/x-icon" href="#" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Melmark New England</title>
+    <title>EnvisionSmart</title>
     <link href="Scripts/style.css" rel="stylesheet" type="text/css" />
 
 
@@ -45,9 +45,6 @@
         }
     </style>
     
-   
-    
-
 </head>
 
 <body>
