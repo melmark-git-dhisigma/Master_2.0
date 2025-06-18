@@ -25,11 +25,11 @@ public partial class Logout : System.Web.UI.Page
         sess = (clsSession)Session["UserSession"];
         if (sess != null)
         {
-            object obj = objData.FetchValue("Select SchoolDesc from School Where SchoolId='" + sess.SchoolId + "'");
-            if (obj != null)
-            {
-                TitleName.Text = obj.ToString();
-            }
+            //object obj = objData.FetchValue("Select SchoolDesc from School Where SchoolId='" + sess.SchoolId + "'");
+            //if (obj != null)
+            //{
+                TitleName.Text = "EnvisionSmart";//obj.ToString();
+            //}
         }
 
     }
