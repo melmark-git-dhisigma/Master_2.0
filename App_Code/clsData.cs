@@ -21,12 +21,12 @@ public class clsData
 
     }
 
-    private static SqlConnection mCon = null;
+    private SqlConnection mCon = null;
     private string mConectionString = "";
     SqlCommand cmd = null;
     SqlDataAdapter DAdap = null;
     public SqlTransaction Trans = null;
-    public static bool blnTrans = true;
+    public bool blnTrans = true;
 
     public void Reset()
     {

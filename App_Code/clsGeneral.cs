@@ -12,15 +12,13 @@ using System.Text.RegularExpressions;
 public class clsGeneral
 {
     public static DateTime dateGeneral = Convert.ToDateTime("1900/01/01");
-    static clsData objSData = null;
-    private static bool IsTrue = false;
     static string strQuery = "";
 
     public static bool IsExit(string fieldName, string TableName, string Condition)
     {
         bool retVal = false;
-        objSData = new clsData();
-        strQuery = "Select " + fieldName + " from [" + TableName + "] Where " + fieldName + "='" + Condition.Trim() + "'";
+        clsData objSData = new clsData();
+        string strQuery = "Select " + fieldName + " from [" + TableName + "] Where " + fieldName + "='" + Condition.Trim() + "'";
         retVal = objSData.IFExists(strQuery);
         return retVal;
     }
@@ -47,12 +45,8 @@ public class clsGeneral
     {
         string rgx = @"[\(\d]{3}\)-[\d]{3}-[\d]{4}$";
         //string rgx = @"^[2-9]\d{2}-\d{3}-\d{4}$";
-        if (System.Text.RegularExpressions.Regex.IsMatch(Number, rgx))
-        {
-            IsTrue = true;
+        return System.Text.RegularExpressions.Regex.IsMatch(Number, rgx);
         }
-        return IsTrue;
-    }
 
     public static string getPageName()
     {
